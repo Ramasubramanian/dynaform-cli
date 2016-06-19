@@ -1,96 +1,96 @@
 {
-	"form": {
-		"id" : "support_ticket_form",
-		"elements" : [
-			{
-				"id": "created_by",
-				"label": "Created By",
-				"type": "input"
-			},
-			{
-				"id": "description",
-				"label": "Description",
-				"type": "input"
-			},			
-			{
-				"id": "severity",
-				"label": "Severity",
-				"type": "input",
-				"validations": [
-					{
-						"type": "number"
-					},					
-					{
-						"type": "range",
-						"max": 4,
-						"min": 1
-					}
-				]				
-			},			
-			{
-				"id": "status",
-				"label": "Status",
-				"type": "enum",
-				"data_source": {
-					"type": "const_array",
-					"value": ["CANCELLED", "COMPLETED"]
-				}						
-			},			
-			{
-				"id": "cancelled_reason",
-				"label": "Cancelled Reason",
-				"type": "enum",
-				"enabled" : {
-					"type": "condition",
-					"lhs": {
-						"type": "element_value",
-						"element": "status"
-					},
-					"op": "eq",
-					"rhs": {
-						"type" : "const",
-						"value" : "CANCELLED"
-					}
-				},
-				"data_source": {
-					"type": "const_array",
-					"value": ["ENDUSER", "OTHERS"]
-				}				
-			},
-			{
-				"id": "cancelled_other_description",
-				"label": "Cancelled (Others) Description",
-				"type": "input",
-				"enabled" : {
-					"type": "condition",
-					"lhs": {
-						"type": "element_value",
-						"element": "cancelled_reason"
-					},
-					"op": "eq",
-					"rhs": {
-						"type" : "const",
-						"value" : "OTHERS"
-					}
-				}				
-			},
-			{
-				"id": "comments",
-				"label": "Comments",
-				"type": "input",
-				"enabled" : {
-					"type": "condition",
-					"lhs": {
-						"type": "element_value",
-						"element": "status"
-					},
-					"op": "eq",
-					"rhs": {
-						"type" : "const",
-						"value" : "COMPLETED"
-					}
-				}
-			}			
-		]
-	}
+    "form": {
+        "id" : "support_ticket_form",
+        "elements" : [
+            {
+                "id": "created_by",
+                "label": "Created By",
+                "type": "input"
+            },
+            {
+                "id": "description",
+                "label": "Description",
+                "type": "input"
+            },          
+            {
+                "id": "severity",
+                "label": "Severity",
+                "type": "input",
+                "validations": [
+                    {
+                        "type": "number"
+                    },                  
+                    {
+                        "type": "range",
+                        "max": 4,
+                        "min": 1
+                    }
+                ]               
+            },          
+            {
+                "id": "status",
+                "label": "Status",
+                "type": "enum",
+                "data_source": {
+                    "type": "const_array",
+                    "value": ["CANCELLED", "COMPLETED"]
+                }                       
+            },          
+            {
+                "id": "cancelled_reason",
+                "label": "Cancelled Reason",
+                "type": "enum",
+                "enabled" : {
+                    "type": "condition",
+                    "lhs": {
+                        "type": "element_value",
+                        "element": "status"
+                    },
+                    "op": "eq",
+                    "rhs": {
+                        "type" : "const",
+                        "value" : "CANCELLED"
+                    }
+                },
+                "data_source": {
+                    "type": "const_array",
+                    "value": ["ENDUSER", "OTHERS"]
+                }               
+            },
+            {
+                "id": "cancelled_other_description",
+                "label": "Cancelled (Others) Description",
+                "type": "input",
+                "enabled" : {
+                    "type": "condition",
+                    "lhs": {
+                        "type": "element_value",
+                        "element": "cancelled_reason"
+                    },
+                    "op": "eq",
+                    "rhs": {
+                        "type" : "const",
+                        "value" : "OTHERS"
+                    }
+                }               
+            },
+            {
+                "id": "comments",
+                "label": "Comments",
+                "type": "input",
+                "enabled" : {
+                    "type": "condition",
+                    "lhs": {
+                        "type": "element_value",
+                        "element": "status"
+                    },
+                    "op": "eq",
+                    "rhs": {
+                        "type" : "const",
+                        "value" : "COMPLETED"
+                    }
+                }
+            }           
+        ]
+    }
 }

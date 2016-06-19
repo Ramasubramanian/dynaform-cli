@@ -1,50 +1,50 @@
 {
-	"form": {
-		"id" : "simple_input_form",
-		"elements" : [
-			{
-				"id": "user_id",
-				"label": "User ID",
-				"type": "input",
-				"validations": [
-					{
-						"type": "number"
-					},
-					{
-						"type": "range",
-						"max": 100,
-						"min": 10
-					}
-				]				
-			},
-			{
-				"id": "reason_code",
-				"label": "Reason Code",
-				"type": "enum",
-				"required": true,
-				"data_source": {
-					"type": "const_array",
-					"value": ["YES", "NO", "DONT_KNOW"]
-				}						
-			},			
-			{
-				"id": "detailed_reason",
-				"label": "Detailed Reason",
-				"type": "input",
-				"required": false,
-				"enabled" : {
-					"type": "condition",
-					"lhs": {
-						"type": "element_value",
-						"element": "reason_code"
-					},
-					"op": "ne",
-					"rhs": {
-						"type" : "const",
-						"value" : "NO"
-					}
-				}
-			}			
-		]
-	}
+    "form": {
+        "id" : "simple_input_form",
+        "elements" : [
+            {
+                "id": "user_id",
+                "label": "User ID",
+                "type": "input",
+                "validations": [
+                    {
+                        "type": "number"
+                    },
+                    {
+                        "type": "range",
+                        "max": 100,
+                        "min": 10
+                    }
+                ]               
+            },
+            {
+                "id": "reason_code",
+                "label": "Reason Code",
+                "type": "enum",
+                "required": true,
+                "data_source": {
+                    "type": "const_array",
+                    "value": ["YES", "NO", "DONT_KNOW"]
+                }                       
+            },          
+            {
+                "id": "detailed_reason",
+                "label": "Detailed Reason",
+                "type": "input",
+                "required": false,
+                "enabled" : {
+                    "type": "condition",
+                    "lhs": {
+                        "type": "element_value",
+                        "element": "reason_code"
+                    },
+                    "op": "ne",
+                    "rhs": {
+                        "type" : "const",
+                        "value" : "NO"
+                    }
+                }
+            }           
+        ]
+    }
 }
