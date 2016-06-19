@@ -4,10 +4,18 @@ A demo of dynamic forms configuration using JSON and a CLI to fill data in a for
 ## Usage
 - Clone this git repo to your machine
 - Download and install nodejs [from here.](https://nodejs.org/en/download/)
-- cd {PATH TO CLONED REPO}
-- npm install 
-- Issue the command: "*node src/dynaform_cli.js formdefs/support_ticket_form.json*" to run a support ticket form example.
-- To run the tests issue command: "*mocha tests*"
+```bash
+cd {PATH TO CLONED REPO}
+npm install 
+```
+- Issue the below command to run a support ticket form example
+```bash
+node src/dynaform_cli.js formdefs/support_ticket_form.json
+```
+- To run the tests issue command
+```bash
+mocha tests
+```
 
 Any type of form can be defined using the JSON definition file. For a detailed explanation of the JSON elements and supported attributes please refer next section.
 
