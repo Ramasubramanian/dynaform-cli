@@ -1,0 +1,17 @@
+{
+  "name": "dynaforms",
+  "version": "1.0.0",
+  "description": "Dynamic Form definitions using JSON",
+  "main": "dynaform_cli.js",
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "author": "raam",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^1.0.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0"
+  }
+}

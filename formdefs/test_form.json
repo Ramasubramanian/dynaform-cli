@@ -1,0 +1,46 @@
+{
+	"form": {
+		"id" : "test_form",
+		"elements" : [
+			{
+				"id": "user_id",
+				"label": "User ID",
+				"type": "input",
+				"required": false,
+				"validations": [
+					{
+						"type": "number"
+					}
+				]				
+			},
+			{
+				"id": "reason_code",
+				"label": "Reason Code",
+				"type": "enum",
+				"required": true,
+				"data_source": {
+					"type": "const_array",
+					"value": ["YES", "NO", "DONT_KNOW"]
+				}						
+			},
+			{
+				"id": "detailed_reason",
+				"label": "Detailed Reason",
+				"type": "input",
+				"required": false,
+				"enabled" : {
+					"type": "condition",
+					"lhs": {
+						"type": "element_value",
+						"element": "reason_code"
+					},
+					"op": "eq",
+					"rhs": {
+						"type" : "const",
+						"value" : "YES"
+					}
+				}
+			}
+		]
+	}
+}
