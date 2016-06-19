@@ -14,7 +14,7 @@ node src/dynaform_cli.js formdefs/support_ticket_form.json
 ```
 - To run the tests issue command
 ```bash
-mocha tests
+npm test
 ```
 
 Any type of form can be defined using the JSON definition file. For a detailed explanation of the JSON elements and supported attributes please refer next section.
