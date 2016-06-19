@@ -48,7 +48,7 @@ A form can have multiple elements in a specified order.
 |type|String|input``|``enum|Yes|Type of the element: <br>**input** - Simple text input <br>**enum** - Enumerated input i.e. dropdown list|
 |validations|Array|-|No|A collection of validation objects to be applied for this element|
 |enabled|Object|-|No|A configuration object that can evaluate to a Boolean to indicate whether or not this form element is active and editable|
-|data_source|Object|-|Yes - for **enum** type elements **only**|A configuration object specifying a data source for the enum input with a list of choices to be shown|
+|data_source|Object - Value Source|-|Yes - for **enum** type elements **only**|A configuration object specifying a data source for the enum input with a list of choices to be shown|
 
 #####Example
 ```json
@@ -100,7 +100,7 @@ This can be applied to a number input element to check if the entered value is w
 }
 ```
 ####Composing validations
-Multiple validations can be composed with an AND logic by defining them as elements of an array, order of application of these validations will be same as order of array definition. For e.g. if we would like to make a form input element bot numeric and within a range of 1 to 4 then below configuration would do
+Multiple validations can be composed with an AND logic by defining them as elements of an array, order of application of these validations will be same as order of array definition. For e.g. if we would like to make a form input element both numeric and within a range of 1 to 4 then below configuration would do
 
 ```json
 {
@@ -156,7 +156,7 @@ Specifies that the value source is another form element.
 |element|String|-|Yes|Unique ID of the form element to refer for a value|
 
 #####Example
-In the below example the value returned from this value source will be the current value in form element named "status"
+In the below example the value returned from this value source will be the current value of form element named "status"
 ```json
 {
 	"type": "element_value",
@@ -165,9 +165,9 @@ In the below example the value returned from this value source will be the curre
 ```
 
 ###5. Conjunctions
-A conjunction is a logic that connects the state of one or more form elements. For e.g. a form element can be activated/enabled based on the state of another form element etc.
+A conjunction is a logic that connects the state of one or more form elements. For e.g. a form element can be activated/enabled based on the state of another form element specified by a conjunction rule.
 
-####a. Condition conjuction
+####a. Condition
 A conjunction that enables or disables a form element based on a condition evaluation which has a left hand side, an operator and a right hand side. 
 
 #####Attributes
