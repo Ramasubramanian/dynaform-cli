@@ -120,7 +120,7 @@ Specifies that the source is a hardcoded constant value or an array
 #####Attributes
 |Name|Type|Values|Required|Description|
 |---|---|---|---|---|
-|type|String|const``|``const_array|Yes|Indicates the type of this value source:<br> **const** - Constant value<br>**const_array** - A constant array|
+|type|String|-|const``|``const_array|Yes|Indicates the type of this value source:<br> **const** - Constant value<br>**const_array** - A constant array|
 |value|String``|``Array``|``Number|-|Yes|Specifies the value of this value source|
 
 #####Example
